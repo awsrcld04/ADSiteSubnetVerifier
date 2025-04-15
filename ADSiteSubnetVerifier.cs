@@ -29,22 +29,7 @@ namespace ADSiteSubnetVerifier
 
         static void PrintParameterSyntax()
         {
-            Console.WriteLine("GroupCopy (c) 2011 SystemsAdminPro.com");
-            Console.WriteLine();
-            Console.WriteLine("Parameter syntax:");
-            Console.WriteLine();
-            Console.WriteLine("Use the following for the first parameter:");
-            Console.WriteLine("-all                for All user objects");
-            Console.WriteLine();
-            Console.WriteLine("Use one of the following as additional parameters:");
-            Console.WriteLine("-count              to include a count with the list");
-            Console.WriteLine("-countonly          to only get a count of the number of users");
-            Console.WriteLine("-ldappath           to get the LDAP path from Active Directory");
-            Console.WriteLine();
-            Console.WriteLine("Examples:");
-            Console.WriteLine("GroupCopy -all");
-            Console.WriteLine("GroupCopy -all -countonly");
-            Console.WriteLine("GroupCopy -all -count -ldappath");
+            // need to create proper parameter syntax output
         }
 
          static void LogToEventLog(string strAppName, string strEventMsg, int intEventType)
