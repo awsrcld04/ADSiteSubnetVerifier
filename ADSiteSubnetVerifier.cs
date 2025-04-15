@@ -165,21 +165,18 @@ namespace ADSiteSubnetVerifier
 
         static void Main(string[] args)
         {
-            if (LicenseCheck())
-            {
-                Forest objForest = Forest.GetCurrentForest();
-                ReadOnlySiteCollection objROSC = objForest.Sites;
+            Forest objForest = Forest.GetCurrentForest();
+            ReadOnlySiteCollection objROSC = objForest.Sites;
 
-                foreach (ActiveDirectorySite objADSite in objROSC)
+            foreach (ActiveDirectorySite objADSite in objROSC)
+            {
+                Console.WriteLine("Site: {0}", objADSite.Name);
+                Console.WriteLine("Subnet(s) for this site:");
+                foreach (ActiveDirectorySubnet objADSubnet in objADSite.Subnets)
                 {
-                    Console.WriteLine("Site: {0}", objADSite.Name);
-                    Console.WriteLine("Subnet(s) for this site:");
-                    foreach (ActiveDirectorySubnet objADSubnet in objADSite.Subnets)
-                    {
-                        Console.WriteLine(objADSubnet.Name);
-                    }
-                    Console.WriteLine();
+                    Console.WriteLine(objADSubnet.Name);
                 }
+                Console.WriteLine();
             }
         }
     }
